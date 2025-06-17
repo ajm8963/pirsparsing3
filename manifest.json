@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Яндекс.Почта Скачиватель",
+  "version": "1.0",
+  "permissions": ["activeTab", "downloads", "scripting"],
+  "host_permissions": ["*://mail.yandex.ru/*", "*://mail.yandex.com/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.yandex.ru/*",
+        "https://mail.yandex.com/*",
+        "https://mail.yandex.by/*",
+        "https://mail.yandex.kz/*",
+        "https://mail.yandex.ua/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_end"
+    }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
